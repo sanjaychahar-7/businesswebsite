@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  @apply bg-midnight text-white antialiased;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(circle at top left, rgba(156,163,175,0.12), transparent 25%),
+    radial-gradient(circle at top right, rgba(99,102,241,0.16), transparent 20%),
+    radial-gradient(circle at bottom left, rgba(34,211,238,0.12), transparent 18%),
+    radial-gradient(circle at bottom right, rgba(212,175,55,0.08), transparent 24%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+select {
+  @apply bg-white/5 border border-white/10 text-white placeholder:text-slate-400 outline-none transition-all duration-300;
+}
+
+button {
+  @apply font-semibold;
+}
+
+.glow-pulse {
+  animation: glowPulse 2.8s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 24px rgba(212, 175, 55, 0.18);
+  }
+  50% {
+    box-shadow: 0 0 42px rgba(212, 175, 55, 0.32);
+  }
+}
+
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(20px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+.animate-blob {
+  animation: blob 12s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+.animated-border {
+  background: linear-gradient(135deg, rgba(212,175,55,0.35), rgba(59,130,246,0.18), rgba(236,72,153,0.18));
+  border-radius: 24px;
+  padding: 1px;
+}
+
+.animated-border > * {
+  border-radius: 24px;
+}
+
+.fancy-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+}
